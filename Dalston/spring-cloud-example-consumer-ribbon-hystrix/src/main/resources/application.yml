@@ -1,0 +1,16 @@
+server:
+  port: 20003
+
+spring:
+  application:
+    name: consumer-ribbon-hystrix
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8001/eureka/
+
+
+
+
+

@@ -15,6 +15,12 @@
 
 	<modules>
 		<module>spring-cloud-example-eureka-server-standalone</module>
+		<module>spring-cloud-example-simple-provider</module>
+		<module>spring-cloud-example-simple-consumer</module>
+		<module>spring-cloud-example-consumer-ribbon</module>
+		<module>spring-cloud-example-consumer-ribbon-hystrix</module>
+		<module>spring-cloud-example-consumer-ribbon-hystrix-actuator</module>
+		<module>spring-cloud-example-hystrix-dashboard</module>
     </modules>
 
 </project>
