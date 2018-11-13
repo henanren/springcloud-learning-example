@@ -445,10 +445,16 @@ public ThreadPoolExecutor getThreadPool(final HystrixThreadPoolKey threadPoolKey
 ### 结论
 
 - **threadPoolKey**的默认值是**groupKey**，而**groupKey**默认值是类名
+
 - 可以通过在类上加**@DefaultProperties( threadPoolKey="xxx" )**设置默认的threadPoolKey
+
 - 可以通过**@HystrixCommand( threadPoolKey="xxx" )**指定当前HystrixCommand实例的threadPoolKey
+
 - **threadPoolKey**用于从线程池缓存中获取线程池 和 初始化创建线程池，由于默认以groupKey即类名为threadPoolKey，那么默认所有在一个类中的HystrixCommand共用一个线程池
+
 - **动态配置线程池**  --  可以通过`hystrix.command.HystrixCommandKey.threadPoolKeyOverride=线程池key`动态设置threadPoolKey，对应的线程池也会重新创建，还可以继续通过`hystrix.threadpool.HystrixThreadPoolKey.coreSize=n`和`hystrix.threadpool.HystrixThreadPoolKey.maximumSize=n`动态设置线程池大小
+
+  > 注意： 通过threadPoolKeyOverride动态修改threadPoolKey之后，hystrixCommand会使用新的threadPool，但是老的线程池还会一直存在，并没有触发shutdown的机制
 
 
 
