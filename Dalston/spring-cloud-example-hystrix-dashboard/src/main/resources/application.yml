@@ -4,7 +4,7 @@ server:
 spring:
   application:
     name: hystrix-dashboard
-
+# 访问  http://localhost:30001/hystrix.stream
 
 
 
